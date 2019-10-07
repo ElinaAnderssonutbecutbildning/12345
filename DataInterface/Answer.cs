@@ -6,7 +6,7 @@ namespace ConsoleApp1
     {
         public int AnswerID { get; set; }
         public int AnswerAltID { get; set; }
-        public Answeralt AnswerAlt { get; set; }
+        public AnswerAlt AnswerAlt { get; set; }
         public ICollection<TestAnswer> TestAnswers { get; set; }
     }
 }
