@@ -8,7 +8,7 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            //Hej
+            //Hej på dig
             using (var schoolContext = new SchoolContext())
             {
                 var teacher1 = new Teacher();
