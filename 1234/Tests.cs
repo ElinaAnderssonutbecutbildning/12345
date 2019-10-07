@@ -1,10 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
-namespace _1234
+namespace ConsoleApp1
 {
     class Tests
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int TestID { get; set; }
+        public string TestName { get; set; }
+
+        
+        public ICollection<Grade> Grades { get; set; }
     }
 }
