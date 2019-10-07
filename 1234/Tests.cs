@@ -4,7 +4,7 @@ using System.Text;
 
 namespace _1234
 {
-    class Tests
+    public class Tests
     {
     }
 }
