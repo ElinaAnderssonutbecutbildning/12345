@@ -8,6 +8,7 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+            //Hej
             using (var schoolContext = new SchoolContext())
             {
                 var teacher1 = new Teacher();
