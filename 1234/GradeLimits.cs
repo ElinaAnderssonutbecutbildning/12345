@@ -1,9 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Text;
 
-/// <summary>
-/// Summary description for Class1
-/// </summary>
-public class GradeLimits
+namespace ConsoleApp1
 {
-	
+    public class GradeLimits
+    {
+
+    }
 }
