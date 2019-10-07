@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace _1234
+namespace ConsoleApp1
 {
-    class Answer
+    public class Answer
     {
+        public int AnswerID { get; set; }
+
+        public ICollection<TestAnswer> TestAnswers { get; set; }
     }
 }

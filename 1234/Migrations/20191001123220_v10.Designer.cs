@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace _1234.Migrations
+namespace ConsoleApp1.Migrations
 {
     [DbContext(typeof(SchoolContext))]
     [Migration("20191001123220_v10")]
