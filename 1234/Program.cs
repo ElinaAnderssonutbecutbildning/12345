@@ -242,6 +242,20 @@ namespace ConsoleApp1
                      on ages.YougestAge equals s.Age
                      select new { Course = c.Name, StudentName = s.Name });
 
+                var StudentsGradesCourses = (from c in schoolContext.Courses
+                                             join g in schoolContext.Grades
+                                              on c.CourseID equals g.CourseID
+                                             join s in schoolContext.Students
+                                             on g.StudentID equals s.StudentID
+                                             orderby s.Name
+                                             select new { Course = c.Name, StudentName = s.Name,
+                                             Grade = g.GradeName });
+
+                Console.WriteLine(" Betyg i kurser");
+                foreach ( var S in StudentsGradesCourses)
+                    Console.WriteLine(S.Course + " " + S.StudentName + " " + S.Grade);
+                Console.ReadLine();
+
                 Console.WriteLine("Vilken elev är yngst i varje kurs?");
                 foreach (var studentInClass in youngestStudentInEachCourse)
                     Console.WriteLine(studentInClass.Course + " " + studentInClass.StudentName);
@@ -249,6 +263,7 @@ namespace ConsoleApp1
 
                 Console.WriteLine("Vilken lärare har mest kurser?");
                     Console.WriteLine(TeacherMostClasses.Teacher + ":" + TeacherMostClasses.Count);
+                Console.ReadLine();
 
                 Console.WriteLine("Hur många studerar NO?");
                                 foreach (var studentInClass in HowManyStudyNO)
