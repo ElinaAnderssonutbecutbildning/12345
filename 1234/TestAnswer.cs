@@ -7,8 +7,10 @@ namespace ConsoleApp1
     public class TestAnswer
     {
         public int TestAnswerID { get; set; }
-        public bool TestAnswerRW;
+        public int AnswerID { get; set; }
 
-        public ICollection<Question> Questions { get; set; }
+        public Answer Answer { get; set; }
+        public ICollection<Student> Students { get; set; }
+        public ICollection<Answer> Answers { get; set; }
     }
 }

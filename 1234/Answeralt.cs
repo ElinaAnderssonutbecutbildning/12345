@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace _1234
+namespace ConsoleApp1
 {
-    class Answeralt
+    class AnswerAlt
     {
+
+        public ICollection<Question> Questions { get; set; }
     }
 }
