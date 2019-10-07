@@ -11,7 +11,7 @@ namespace ConsoleApp1
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int QuestionID { get; set; }
-        public string Questionname { get; set; }
+        public string QuestionName { get; set; }
         public ICollection<Tests> Tests { get; set; }
     }
 }
