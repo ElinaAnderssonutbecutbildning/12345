@@ -1,10 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using DataInterface;
 
 namespace DataAccess
 {
-    class CourseManager
+    public class CourseManager : ICourseManager
     {
+        public void AddCourse(string courseName)
+        {
+
+        }
+
     }
 }
