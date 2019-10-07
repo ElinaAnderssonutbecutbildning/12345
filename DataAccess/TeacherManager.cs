@@ -1,10 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using DataInterface;
 
 namespace DataAccess
 {
-    class TeacherManager
+    public class TeacherManager : ITeacherManager
     {
+        public void AddTeacher (string teacherName)
+        {
+
+        }
     }
 }
