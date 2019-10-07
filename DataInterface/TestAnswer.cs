@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace ConsoleApp1
 {
@@ -8,7 +6,6 @@ namespace ConsoleApp1
     {
         public int TestAnswerID { get; set; }
         public int AnswerID { get; set; }
-
         public Answer Answer { get; set; }
         public ICollection<Student> Students { get; set; }
         public ICollection<Answer> Answers { get; set; }
