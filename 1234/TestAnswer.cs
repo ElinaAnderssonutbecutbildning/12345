@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace _1234
+namespace ConsoleApp1
 {
-    class TestAnswer
+    public class TestAnswer
     {
+        public int TestAnswerID { get; set; }
+        public bool TestAnswerRW;
+
+        public ICollection<Question> Questions { get; set; }
     }
 }

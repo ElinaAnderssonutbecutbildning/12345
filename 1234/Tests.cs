@@ -6,7 +6,7 @@ using System.Text;
 
 namespace ConsoleApp1
 {
-    class Tests
+    public class Tests
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
