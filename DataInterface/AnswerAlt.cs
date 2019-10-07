@@ -2,7 +2,7 @@
 
 namespace ConsoleApp1
 {
-    public class AnswerAlt
+    public class Answeralt
     {
         public int AnswerAltID { get; set; }
         public string AlterText { get; set; }
