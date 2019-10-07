@@ -196,99 +196,100 @@ namespace ConsoleApp1
 
 
 
-                var StudentsInCourseOne = (from s in schoolContext.Students
-                                           join g in schoolContext.Grades
-                                            on s.StudentID equals g.StudentID
-                                           join c in schoolContext.Courses
-                                           on g.CourseID equals c.CourseID
-                                           where c.Name == "Kurs"
-                                           select s);
-
-                var HowManyStudyNO = (from s in schoolContext.Students
-                                      join g in schoolContext.Grades
-                                       on s.StudentID equals g.StudentID
-                                      join c in schoolContext.Courses
-                                      on g.CourseID equals c.CourseID
-                                      where c.Room == 10
-                                      select s);
-
-                var HowManyOver30 = (from s in schoolContext.Students
-                                     join g in schoolContext.Grades
-                                      on s.StudentID equals g.StudentID
-                                     join c in schoolContext.Courses
-                                     on g.CourseID equals c.CourseID
-                                     where s.Age >= 30
-                                     select s);
-
-                var TeacherMostClasses = (
-                                          from g in (from c in schoolContext.Courses
-                                          group c by c.TeacherID into r
-                                          select new { Key = r.Key, Count = r.Count() })
-                                          join t in schoolContext.Teachers
-                                          on g.Key equals t.TeacherID
-                                          orderby g.Count descending
-                                          select new { Count = g.Count, Teacher = t.Name }).First();
-
-                var youngestStudentInEachCourse = 
-                    (from ages in
-                                                   (from s in schoolContext.Students
-                                                   join g in schoolContext.Grades
-                                                   on s.StudentID equals g.StudentID
-                                                   group s by g.CourseID into sc
-                                                   select new { CourseID = sc.Key, 
-                                                   YougestAge = sc.Min(s => s.Age) })
-                     join c in schoolContext.Courses
-                     on ages.CourseID equals c.CourseID
-                     join s in schoolContext.Students
-                     on ages.YougestAge equals s.Age
-                     select new { Course = c.Name, StudentName = s.Name });
-
-                var StudentsGradesCourses = (from c in schoolContext.Courses
+                /*  var StudentsInCourseOne = (from s in schoolContext.Students
                                              join g in schoolContext.Grades
-                                              on c.CourseID equals g.CourseID
-                                             join s in schoolContext.Students
-                                             on g.StudentID equals s.StudentID
-                                             orderby s.Name
-                                             select new { Course = c.Name, StudentName = s.Name,
-                                             Grade = g.GradeName });
+                                              on s.StudentID equals g.StudentID
+                                             join c in schoolContext.Courses
+                                             on g.CourseID equals c.CourseID
+                                             where c.Name == "Kurs"
+                                             select s);
 
-                Console.WriteLine(" Betyg i kurser");
-                foreach ( var S in StudentsGradesCourses)
-                    Console.WriteLine(S.Course + " " + S.StudentName + " " + S.Grade);
-                Console.ReadLine();
+                  var HowManyStudyNO = (from s in schoolContext.Students
+                                        join g in schoolContext.Grades
+                                         on s.StudentID equals g.StudentID
+                                        join c in schoolContext.Courses
+                                        on g.CourseID equals c.CourseID
+                                        where c.Room == 10
+                                        select s);
 
-                Console.WriteLine("Vilken elev är yngst i varje kurs?");
-                foreach (var studentInClass in youngestStudentInEachCourse)
-                    Console.WriteLine(studentInClass.Course + " " + studentInClass.StudentName);
-                Console.ReadLine();
+                  var HowManyOver30 = (from s in schoolContext.Students
+                                       join g in schoolContext.Grades
+                                        on s.StudentID equals g.StudentID
+                                       join c in schoolContext.Courses
+                                       on g.CourseID equals c.CourseID
+                                       where s.Age >= 30
+                                       select s);
 
-                Console.WriteLine("Vilken lärare har mest kurser?");
-                    Console.WriteLine(TeacherMostClasses.Teacher + ":" + TeacherMostClasses.Count);
-                Console.ReadLine();
+                  var TeacherMostClasses = (
+                                            from g in (from c in schoolContext.Courses
+                                            group c by c.TeacherID into r
+                                            select new { Key = r.Key, Count = r.Count() })
+                                            join t in schoolContext.Teachers
+                                            on g.Key equals t.TeacherID
+                                            orderby g.Count descending
+                                            select new { Count = g.Count, Teacher = t.Name }).First();
 
-                Console.WriteLine("Hur många studerar NO?");
-                                foreach (var studentInClass in HowManyStudyNO)
-                                    Console.WriteLine(studentInClass.Name);
-                                Console.ReadLine();
+                  var youngestStudentInEachCourse = 
+                      (from ages in
+                                                     (from s in schoolContext.Students
+                                                     join g in schoolContext.Grades
+                                                     on s.StudentID equals g.StudentID
+                                                     group s by g.CourseID into sc
+                                                     select new { CourseID = sc.Key, 
+                                                     YougestAge = sc.Min(s => s.Age) })
+                       join c in schoolContext.Courses
+                       on ages.CourseID equals c.CourseID
+                       join s in schoolContext.Students
+                       on ages.YougestAge equals s.Age
+                       select new { Course = c.Name, StudentName = s.Name });
 
-                                Console.WriteLine("Hur många är/över 30 år");
-                                foreach (var studentInClass in HowManyOver30)
-                                    Console.WriteLine(studentInClass.Name);
-                                Console.ReadLine();
+                  var StudentsGradesCourses = (from c in schoolContext.Courses
+                                               join g in schoolContext.Grades
+                                                on c.CourseID equals g.CourseID
+                                               join s in schoolContext.Students
+                                               on g.StudentID equals s.StudentID
+                                               orderby s.Name
+                                               select new { Course = c.Name, StudentName = s.Name,
+                                               Grade = g.GradeName });
 
-                                foreach ( var studentInClass in StudentsInCourseOne )
-                                    Console.WriteLine(studentInClass);
-                                Console.ReadLine();
-                                
-                                var students = schoolContext.Courses.
-                                Include(c => c.Grades).
-                                ThenInclude(g => g.Student).
-                                Where(c => c.Name == "Kurs").                                
-                                SelectMany(c => c.Grades.Select(g => g.Student));
+                  Console.WriteLine(" Betyg i kurser");
+                  foreach ( var S in StudentsGradesCourses)
+                      Console.WriteLine(S.Course + " " + S.StudentName + " " + S.Grade);
+                  Console.ReadLine();
 
-                                foreach ( var c in students)
-                                    Console.WriteLine(c.Name);
-                                Console.ReadLine();
+                  Console.WriteLine("Vilken elev är yngst i varje kurs?");
+                  foreach (var studentInClass in youngestStudentInEachCourse)
+                      Console.WriteLine(studentInClass.Course + " " + studentInClass.StudentName);
+                  Console.ReadLine();
+
+                  Console.WriteLine("Vilken lärare har mest kurser?");
+                      Console.WriteLine(TeacherMostClasses.Teacher + ":" + TeacherMostClasses.Count);
+                  Console.ReadLine();
+
+                  Console.WriteLine("Hur många studerar NO?");
+                                  foreach (var studentInClass in HowManyStudyNO)
+                                      Console.WriteLine(studentInClass.Name);
+                                  Console.ReadLine();
+
+                                  Console.WriteLine("Hur många är/över 30 år");
+                                  foreach (var studentInClass in HowManyOver30)
+                                      Console.WriteLine(studentInClass.Name);
+                                  Console.ReadLine();
+
+                                  foreach ( var studentInClass in StudentsInCourseOne )
+                                      Console.WriteLine(studentInClass);
+                                  Console.ReadLine();
+
+                                  var students = schoolContext.Courses.
+                                  Include(c => c.Grades).
+                                  ThenInclude(g => g.Student).
+                                  Where(c => c.Name == "Kurs").                                
+                                  SelectMany(c => c.Grades.Select(g => g.Student));
+
+                                  foreach ( var c in students)
+                                      Console.WriteLine(c.Name);
+                                  Console.ReadLine(); */
+
 
 
 
