@@ -5,11 +5,5 @@ using DataInterface;
 
 namespace DataAccess
 {
-    public class TeacherManager : ITeacherManager
-    {
-        public void AddTeacher (string teacherName)
-        {
 
-        }
-    }
 }

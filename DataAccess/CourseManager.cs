@@ -5,12 +5,5 @@ using DataInterface;
 
 namespace DataAccess
 {
-    public class CourseManager : ICourseManager
-    {
-        public void AddCourse(string courseName)
-        {
 
-        }
-
-    }
 }
