@@ -6,7 +6,7 @@ using DataInterface;
 
 namespace DataAccess
 {
-    public class TeacherManager
+    public class TeacherManager : ITeacher
     {
         public void AddTeacher(string name)
         {
