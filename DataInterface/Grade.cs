@@ -1,9 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using DataInterface;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ConsoleApp1
 {
-    public class Grade
+    public class Grade : IGrade
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

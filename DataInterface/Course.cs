@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using DataInterface;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ConsoleApp1
 {
-    public class Course
+    public class Course : ICourse
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
