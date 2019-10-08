@@ -4,9 +4,7 @@ using System.Text;
 
 namespace DataAccess
 {
-    public class StudentManager
+    class StudentManager
     {
-
-     
     }
 }
