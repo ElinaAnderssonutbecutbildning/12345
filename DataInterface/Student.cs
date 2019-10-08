@@ -9,7 +9,6 @@ namespace ConsoleApp1
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-
         public int StudentID { get; set; }
         public int TestAnswerID { get; set; }
         public string Name { get; set; }

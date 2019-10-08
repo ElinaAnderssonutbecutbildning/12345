@@ -7,10 +7,6 @@ namespace DataInterface
 {
     public interface IStudent
     {
-        public void AddStudent(string studentName)
-        {
-
-        }
-
+        public void AddStudent(string studentName){}
     }
 }
