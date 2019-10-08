@@ -8,19 +8,14 @@ namespace DataAccess
 {
     public class TeacherManager : ITeacher
     {
-        public void AddTeacher(string name)
+        public void AddTeacher(string teacherName)
         {
             using(var schoolContext = new SchoolContext())
             {
-                var teacher1 = new Teacher();
-                teacher1.Name = "Göran";
-                schoolContext.Teachers.Add(teacher1);
-
-                var teacher2 = new Teacher();
-                teacher2.Name = "Maria";
-                schoolContext.Teachers.Add(teacher2);
+                var teacher = new Teacher();
+                teacher.Name = teacherName;
+                schoolContext.Teachers.Add(teacher);
             }
         }
     }
-
 }
