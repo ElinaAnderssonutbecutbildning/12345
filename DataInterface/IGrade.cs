@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DataInterface
 {
-    public class IGrade : Grade
+    public interface IGrade
     {
         public void AddGrade(string gradeName)
         {

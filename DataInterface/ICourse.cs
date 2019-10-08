@@ -5,12 +5,11 @@ using System.Text;
 
 namespace DataInterface
 {
-    public class ICourse : Course
+    public interface ICourse
     {
         public void AddCourse(string courseName)
         {
 
         }
-
     }
 }

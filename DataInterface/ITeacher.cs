@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DataInterface
 {
-    public class ITeacher : Teacher
+    public interface ITeacher
     {
         public void AddTeacher(string teacherName)
         {
