@@ -6,7 +6,7 @@ namespace ConsoleApp1
     {
         public int TestAnswerID { get; set; }
         public int AnswerID { get; set; }
-        //public int QuestionAnswID{get; set;}
+        //public int QuestionAnswID{get; set;} gör en ny klass för fråge svar.
 
         //public QuestionAnsw QuestionAnsw {get; set;}
 
