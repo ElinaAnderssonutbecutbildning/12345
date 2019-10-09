@@ -11,8 +11,10 @@ namespace ConsoleApp1
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int StudentID { get; set; }
         public int TestAnswerID { get; set; }
+        
         public string Name { get; set; }
         public int Age { get; set; }
+
         public TestAnswer TestAnswer { get; set; }
         public ICollection<Grade> Grades { get; set; }
     }
