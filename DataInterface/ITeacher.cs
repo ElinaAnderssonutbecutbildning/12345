@@ -1,12 +1,7 @@
-﻿using ConsoleApp1;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace DataInterface
+﻿namespace DataInterface
 {
     public interface ITeacher
     {
-        public void AddTeacher(string teacherName){}
+        public void AddTeacher(string teacherName) { }
     }
 }

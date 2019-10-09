@@ -1,11 +1,10 @@
-﻿using DataInterface;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace ConsoleApp1
 {
     public class SchoolContext : DbContext
     {
-        private const string connectinString = "server=LAPTOP-UIJVU0KV;Database=EFCore;Trusted_Connection=True;";
+        private const string connectinString = "Server=localhost;Database=EFCore;Trusted_Connection=True;";
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(connectinString);

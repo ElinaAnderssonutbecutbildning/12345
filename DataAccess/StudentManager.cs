@@ -1,21 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using DataInterface;
 using System.Linq;
-using System.Text;
-using ConsoleApp1;
-using DataInterface;
 
-namespace DataAccess
+namespace ConsoleApp1
 {
     public class StudentManager : IStudent
     {
-        public void AddStudent(string name, int age)
+        public void AddStudent(string studentName, int studentAge)
         {
             using (var schoolContext = new SchoolContext())
             {
-                var student = new Student();
-                student.Name = name;
-                student.Age = age;
+                var student = new Student
+                {
+                    Name = studentName,
+                    Age = studentAge
+                };
                 schoolContext.Students.Add(student);
                 schoolContext.SaveChanges();
             }
@@ -23,7 +21,7 @@ namespace DataAccess
 
         public Student GetStudentByID(int studentID)
         {
-             using (var schoolContext = new SchoolContext())
+            using (var schoolContext = new SchoolContext())
             {
                 return schoolContext.Students.First(i => i.StudentID == studentID);
             }
