@@ -11,6 +11,8 @@ namespace DataInterface
         public string QuestionAnsText { get; set; }
 
         public ICollection<TestAnswer> TestAnswers { get; set; }
+        public ICollection<AnswerAlt> AnswerAlts { get; set; }
+        public ICollection<Question> Questions { get; set; }
 
     }
 }

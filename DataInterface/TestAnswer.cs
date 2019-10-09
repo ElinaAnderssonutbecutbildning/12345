@@ -11,7 +11,7 @@ namespace ConsoleApp1
 
 
         //public Answer Answer { get; set; }
-        public QuestionAnw QuestionAnw { get; set; }
+        public QuestionAnswer QuestionAnswer { get; set; }
         public ICollection<Student> Students { get; set; }
         public ICollection<Test> Tests {get; set;}
     }
