@@ -14,6 +14,6 @@ namespace ConsoleApp1
         public string QuestionName { get; set; }
 
         public AnswerAlt AnswerAlt{get; set;}
-        public ICollection<Tests> Tests { get; set; }
+        public ICollection<Test> Tests { get; set; }
     }
 }
