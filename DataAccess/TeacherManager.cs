@@ -15,6 +15,7 @@ namespace DataAccess
                 var teacher = new Teacher();
                 teacher.Name = teacherName;
                 schoolContext.Teachers.Add(teacher);
+                schoolContext.SaveChanges();
             }
         }
     }
