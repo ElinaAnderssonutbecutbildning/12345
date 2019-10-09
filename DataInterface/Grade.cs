@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ConsoleApp1
 {
-    public class Grade : IGrade
+    public class Grade
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

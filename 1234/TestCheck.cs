@@ -9,3 +9,15 @@
  * datan jämförs i den här klassens metod och returnerar ett provresultat
  * 
  */
+
+
+ namespace DataAccess
+{
+    public class TestCheck : ITestCheck
+    {
+        public TestScore TestChecker()
+        {
+
+        }
+    }
+}
