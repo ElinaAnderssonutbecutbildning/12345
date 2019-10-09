@@ -10,7 +10,6 @@ namespace ConsoleApp1
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int QuestionID { get; set; }
         public int AnswerAltID { get; set; }
-
         public string QuestionName { get; set; }
 
         public AnswerAlt AnswerAlt{get; set;}

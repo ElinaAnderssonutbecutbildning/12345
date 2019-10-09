@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using DataInterface;
 
 namespace ConsoleApp1
 {
@@ -6,11 +7,11 @@ namespace ConsoleApp1
     {
         public int TestAnswerID { get; set; }
         public int AnswerID { get; set; }
-        //public int QuestionAnswID{get; set;} gör en ny klass för fråge svar.
+        public int QuestionAnwID{get; set;}
 
-        //public QuestionAnsw QuestionAnsw {get; set;}
 
         //public Answer Answer { get; set; }
+        public QuestionAnw QuestionAnw { get; set; }
         public ICollection<Student> Students { get; set; }
         public ICollection<Test> Tests {get; set;}
     }
