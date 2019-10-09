@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using ConsoleApp1;
 using DataInterface;
 
 namespace DataAccess
 {
-    
     public class StudentManager : IStudent
     {
         public void AddStudent(string name, int age)
@@ -16,7 +16,7 @@ namespace DataAccess
                 var student = new Student();
                 student.Name = name;
                 student.Age = age;
-                schoolContext.StudentS.Add(student);
+                schoolContext.Students.Add(student);
                 schoolContext.SaveChanges();
             }
         }
@@ -25,7 +25,7 @@ namespace DataAccess
         {
              using (var schoolContext = new SchoolContext())
             {
-                return schoolContext.Students.First(i => i.studentID == studentID);
+                return schoolContext.Students.First(i => i.StudentID == studentID);
             }
         }
     }

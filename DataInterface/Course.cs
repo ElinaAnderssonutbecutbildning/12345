@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ConsoleApp1
 {
-    public class Course : ICourse
+    public class Course
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -16,8 +16,8 @@ namespace ConsoleApp1
 
         public int Room { get; set; }
 
-        public Tests Tests {get; set;}
-        public Teacher Teachers { get; set; }
+        public Test Test {get; set;}
+        public Teacher Teacher { get; set; }
         public ICollection<Grade> Grades { get; set; }
     }
 }

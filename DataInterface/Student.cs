@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ConsoleApp1
 {
-    public class Student : IStudent
+    public class Student
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
