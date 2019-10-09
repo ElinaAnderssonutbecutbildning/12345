@@ -17,4 +17,4 @@ namespace ConsoleApp1
         public ICollection<Course> Courses{get; set;}
         //public ICollection<Grade> Grades { get; set; } Göras om, ska vara till course ist
     }
-}
+}                                                        
