@@ -8,6 +8,5 @@ namespace DataInterface
     public interface IGrade
     {
         public void AddGrade(string GradeName);
-
     }
 }

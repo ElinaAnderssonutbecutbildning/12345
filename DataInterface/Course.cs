@@ -17,7 +17,7 @@ namespace ConsoleApp1
         public int Room { get; set; }
 
         public Tests Tests {get; set;}
-        public Teacher Teacher { get; set; }
+        public Teacher Teachers { get; set; }
         public ICollection<Grade> Grades { get; set; }
     }
 }
