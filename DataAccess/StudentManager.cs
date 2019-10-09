@@ -20,5 +20,13 @@ namespace DataAccess
                 schoolContext.SaveChanges();
             }
         }
+
+        public Student GetStudentByID(int studentID)
+        {
+             using (var schoolContext = new SchoolContext())
+            {
+                return schoolContext.Students.First(i => i.studentID == studentID);
+            }
+        }
     }
 }
