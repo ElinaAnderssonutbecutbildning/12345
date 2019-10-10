@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using DataInterface;
+using Microsoft.EntityFrameworkCore;
 
 namespace ConsoleApp1
 {
