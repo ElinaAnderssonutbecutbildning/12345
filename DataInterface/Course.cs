@@ -18,6 +18,6 @@ namespace ConsoleApp1
         public ICollection<Grade> Grades { get; set; }
 
         public Teacher Teacher { get; set; }
-        public Test Test { get; set; }
+        //public Test Test { get; set; }
     }
 }
