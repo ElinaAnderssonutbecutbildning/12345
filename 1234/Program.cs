@@ -42,86 +42,102 @@
                 Course4.Teacher = teacher2;
                 schoolContext.Courses.Add(Course4);
 
+                var TestAnswer = new TestAnswer();
+
                 var student1 = new Student();
                 student1.Name = "Fredrik";
                 student1.Age = 32;
+                student1.TestAnswer = TestAnswer;
                 schoolContext.Students.Add(student1);
 
 
                 var student2 = new Student();
                 student2.Name = "Gustaf";
                 student2.Age = 35;
+                student2.TestAnswer = TestAnswer;
                 schoolContext.Students.Add(student2);
 
 
                 var student3 = new Student();
                 student3.Name = "Sune";
                 student3.Age = 37;
+                student3.TestAnswer = TestAnswer;
                 schoolContext.Students.Add(student3);
 
 
                 var student4 = new Student();
                 student4.Name = "Bert";
                 student4.Age = 25;
+                student4.TestAnswer = TestAnswer;
                 schoolContext.Students.Add(student4);
 
 
                 var student5 = new Student();
                 student5.Name = "Sandra";
                 student5.Age = 29;
+                student5.TestAnswer = TestAnswer;
                 schoolContext.Students.Add(student5);
 
 
                 var student6 = new Student();
                 student6.Name = "Julia";
                 student6.Age = 20;
+                student6.TestAnswer = TestAnswer;
                 schoolContext.Students.Add(student6);
 
 
                 var student7 = new Student();
                 student7.Name = "Viktor";
                 student7.Age = 24;
+                student7.TestAnswer = TestAnswer;
                 schoolContext.Students.Add(student7);
 
 
                 var student8 = new Student();
                 student8.Name = "Carl";
                 student8.Age = 27;
+                student8.TestAnswer = TestAnswer;
                 schoolContext.Students.Add(student8);
 
 
                 var student9 = new Student();
                 student9.Name = "Peter";
                 student9.Age = 28;
+                student9.TestAnswer = TestAnswer;
                 schoolContext.Students.Add(student9);
 
 
                 var student10 = new Student();
                 student10.Name = "Oscar";
                 student10.Age = 38;
+                student10.TestAnswer = TestAnswer;
                 schoolContext.Students.Add(student10);
 
 
                 var student11 = new Student();
                 student11.Name = "Elina";
                 student11.Age = 27;
+                student11.TestAnswer = TestAnswer;
                 schoolContext.Students.Add(student11);
 
 
                 var student12 = new Student();
                 student12.Name = "Noah";
                 student12.Age = 40;
+                student12.TestAnswer = TestAnswer;
                 schoolContext.Students.Add(student12);
 
+               // var Test = new Test();
 
 
                 var grade1 = new Grade();
                 grade1.Course = Course1;
                 grade1.GradeName = "VG";
                 grade1.Student = student1;
+               // grade1.Test = Test;
                 schoolContext.Grades.Add(grade1);
 
-                var grade2 = new Grade();
+              /*  var grade2 = new Grade();
                 grade2.Course = Course2;
                 grade2.GradeName = "G";
                 grade2.Student = student1;
@@ -187,7 +203,7 @@
                 grade12.GradeName = "MVG";
                 grade12.Course = Course2;
                 grade12.Student = student5;
-                schoolContext.Grades.Add(grade12);
+                schoolContext.Grades.Add(grade12); */
                 schoolContext.SaveChanges();
 
 
