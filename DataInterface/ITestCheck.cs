@@ -5,8 +5,8 @@ using System.Text;
 
 namespace DataInterface
 {
-    public interface ITeacher
+    public interface ITestCheck
     {
-        public void AddTeacher(string teacherName){}
+        public void AddCourse(string courseName, Teacher teacherName, int roomName){}
     }
 }
