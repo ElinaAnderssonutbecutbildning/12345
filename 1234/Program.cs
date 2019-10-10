@@ -127,14 +127,14 @@
                 student12.TestAnswer = TestAnswer;
                 schoolContext.Students.Add(student12);
 
-               // var Test = new Test();
+                var Test = new Test();
 
 
                 var grade1 = new Grade();
                 grade1.Course = Course1;
                 grade1.GradeName = "VG";
                 grade1.Student = student1;
-               // grade1.Test = Test;
+                grade1.Test = Test;
                 schoolContext.Grades.Add(grade1);
 
               /*  var grade2 = new Grade();
