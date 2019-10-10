@@ -11,7 +11,7 @@
  */
 
 
- namespace DataAccess
+ /*namespace DataAccess
 {
     public class TestCheck : ITestCheck
     {
@@ -20,4 +20,4 @@
 
         }
     }
-}
+}*/

@@ -4,13 +4,8 @@ using System.Text;
 
 namespace _1234
 {
-    public class QuestionForm
+    public class QuestionForm 
     {
-       
-            
         
-
-
-
     }
 }
