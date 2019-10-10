@@ -1,19 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using ConsoleApp1;
-using DataInterface;
+﻿using DataInterface;
 
-namespace DataAccess
+namespace ConsoleApp1
 {
     public class TeacherManager : ITeacher
     {
         public void AddTeacher(string teacherName)
         {
-            using(var schoolContext = new SchoolContext())
+            using (var schoolContext = new SchoolContext())
             {
-                var teacher = new Teacher();
-                teacher.Name = teacherName;
+                var teacher = new Teacher
+                {
+                    Name = teacherName
+                };
                 schoolContext.Teachers.Add(teacher);
                 schoolContext.SaveChanges();
             }
